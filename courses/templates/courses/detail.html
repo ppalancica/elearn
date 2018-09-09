@@ -4,9 +4,22 @@
 
 {% block content %}
 
-  <img src="{{ course.course_logo }}" />
+  <!-- <img src="{{ course.logo }}" /> -->
   <h1>{{ course.title }}</h1>
   <h3>{{ course.author }}</h3>
+
+  {% if course.modules %}
+    {% for module in course.modules.all %}
+      <p><strong>{{ module }}</strong></p>
+      {% if module.lessons %}
+        {% for lesson in module.lessons.all %}
+          <p><a href="">{{ lesson }}</a></p>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <p>No Module found...</p>
+  {% endif %}
 
   <h3>URL: {{ course.get_absolute_url }}</h3>
 

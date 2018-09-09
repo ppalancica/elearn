@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import Course
+from .models import Course, Module
 # from django.contrib.auth.mixins import LoginRequiredMixin
 # https://docs.djangoproject.com/en/2.1/topics/auth/default/#the-loginrequired-mixin
 
