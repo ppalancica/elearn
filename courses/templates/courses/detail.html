@@ -1,0 +1,21 @@
+{% extends 'courses/base.html' %}
+
+{% block title %}Course Details{% endblock %}
+
+{% block content %}
+
+  <img src="{{ course.course_logo }}" />
+  <h1>{{ course.title }}</h1>
+  <h3>{{ course.author }}</h3>
+
+  {% if error_message %}
+      <p><strong>{{ error_message }}</strong></p>
+  {% endif %}
+
+  <!-- <ul>
+    {% for lesson in course.lesson_set.all  %}
+      <li>{{ lesson.title }} - {{ lesson.file_type }}</li>
+    {% endfor %}
+  </ul> -->
+
+{% endblock %}
