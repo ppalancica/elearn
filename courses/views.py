@@ -12,11 +12,11 @@ class IndexView(generic.ListView):
     template_name = 'courses/index.html'
 
     # the default is object_list, but we want to use all_courses inside the views.py file
-    context_object_name = 'all_courses'
+    # context_object_name = 'course_list'
 
     def get_queryset(self):
         return Course.objects.all()
 
-class DetailView(generic.DetailView):
+class CourseDetailView(generic.DetailView):
     model = Course
     template_name = 'courses/detail.html'

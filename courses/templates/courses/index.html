@@ -4,12 +4,16 @@
 
 {% block content %}
 
-  <h1>List of courses here...</h1>
-
-  <ul>
-    {% for course in all_courses %}
-      <li>{{ course }} <a href="{% url 'courses:detail' course.slug %}">Go to Course</a></li>
-    {% endfor %}
-  </ul>
+  {% if course_list %}
+    <!-- code here to list the courses -->
+    <h1>List of courses here...</h1>
+    <ul>
+      {% for course in course_list %}
+        <li>{{ course }} <a href="{% url 'courses:course-detail' course.slug %}">Go to Course</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no courses available...</p>
+  {% endif %}
 
 {% endblock %}

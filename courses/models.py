@@ -20,13 +20,13 @@ class Course(models.Model):
     summary = models.CharField(max_length=255, null=True, blank=True)
     # technology = models.CharField(max_length=100)
     # logo = models.CharField(max_length=1000)
-    author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True, blank=True)
+    author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
         ordering = ['title']
 
     def get_absolute_url(self):
-        return reverse('courses:detail', args=[str(self.slug)]) # kwargs={'pk': self.pk}
+        return reverse('courses:course-detail', args=[str(self.slug)]) # kwargs={'pk': self.pk}
 
     def __str__(self):
         return self.title + ' ' + str(self.author)
