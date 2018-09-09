@@ -8,6 +8,8 @@
   <h1>{{ course.title }}</h1>
   <h3>{{ course.author }}</h3>
 
+  <h3>URL: {{ course.get_absolute_url }}</h3>
+
   {% if error_message %}
       <p><strong>{{ error_message }}</strong></p>
   {% endif %}
