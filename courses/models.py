@@ -38,7 +38,7 @@ class Module(models.Model):
     course = models.ForeignKey(Course, related_name="modules", on_delete=models.CASCADE) # null=False, blank=False
 
     class Meta:
-        ordering = ['title']
+        ordering = ['pk']
 
     def __str__(self):
         return self.title
@@ -51,7 +51,10 @@ class Lesson(models.Model):
     file_type = models.CharField(max_length=10)
 
     class Meta:
-        ordering = ['title']
+        ordering = ['pk']
+
+    def get_absolute_url(self):
+        return reverse('courses:lesson-detail', kwargs={'course_slug': self.module.course.slug, 'slug': self.slug})
 
     def __str__(self):
         return self.title

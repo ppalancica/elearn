@@ -13,7 +13,7 @@
       <p><strong>{{ module }}</strong></p>
       {% if module.lessons %}
         {% for lesson in module.lessons.all %}
-          <p><a href="">{{ lesson }}</a></p>
+          <p><a href="{{ lesson.get_absolute_url }}">{{ lesson }}</a></p>
         {% endfor %}
       {% endif %}
     {% endfor %}

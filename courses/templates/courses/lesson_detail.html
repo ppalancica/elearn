@@ -1,0 +1,17 @@
+{% extends 'courses/base.html' %}
+
+{% block title %}Course Details{% endblock %}
+
+{% block content %}
+
+  <h1>{{ lesson.title }}</h1>
+  <h3>{{ lesson.module }}</h3>
+
+
+  <h3>URL: {{ lesson.get_absolute_url }} | pk = {{ lesson.pk }}</h3>
+
+  {% if error_message %}
+      <p><strong>{{ error_message }}</strong></p>
+  {% endif %}
+
+{% endblock %}

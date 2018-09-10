@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import Course, Module
+from .models import Course, Module, Lesson
 # from django.contrib.auth.mixins import LoginRequiredMixin
 # https://docs.djangoproject.com/en/2.1/topics/auth/default/#the-loginrequired-mixin
 
@@ -19,4 +19,8 @@ class IndexView(generic.ListView):
 
 class CourseDetailView(generic.DetailView):
     model = Course
-    template_name = 'courses/detail.html'
+    # template_name = 'courses/course_detail.html'
+
+class LessonDetailView(generic.DetailView):
+    model = Lesson
+    # template_name = 'courses/lesson_detail.html'
