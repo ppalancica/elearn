@@ -10,6 +10,7 @@
     <ul>
       {% for course in course_list %}
         <li>{{ course }} <a href="{% url 'courses:course-detail' course.slug %}">Go to Course</a></li>
+        {% comment %} Similarly, we can use {{ course.get_absolute_url }} {% endcomment %}
       {% endfor %}
     </ul>
   {% else %}
